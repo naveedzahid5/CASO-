@@ -1,0 +1,45 @@
+<html> 
+    <head>
+        <title>Product Retail Value Demo</title>
+        <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    </head> 
+    <body> 
+        <!--division to display the result--> 
+        <div id="value"></div> 
+        <script type="text/javascript"> 
+            var productNo; 
+            //product number 
+            var productCost; 
+            //cost of product in $
+            var quantitySoldInADay; 
+            //quantity of product sold in a day
+            var totalRetailValue=0.0; 
+            //total retail value of products sold last week 
+            //prompt for product number
+
+            productNo = parseInt(prompt('Enter product number(0 to stop):')); 
+
+            //sentinal controlled loop
+            while(productNo !== 0) {
+                //prompt for product quantity sold in a day 
+                quantitySoldInADay = parseInt(prompt('Enter quantity of product sold in a day:')); 
+                switch(productNo) { 
+                    case 1: productCost=2.98;
+                        break;
+                    case 2: productCost=4.50;
+                        break;
+                    case 3: productCost=9.98;
+                        break; 
+                    case 4: productCost=4.49; 
+                        break; 
+                    case 5: productCost=6.87; 
+                        break; } 
+                //calculation of total retail value
+                totalRetailValue+=productCost*quantitySoldInADay;
+                productNo = parseInt(prompt('Enter product number(0 to stop):')); 
+            }
+            //assigns result to the division 
+            document.getElementById('value').innerHTML="Total retail value: $"+totalRetailValue+"<br>"; 
+        </script>
+    </body>
+</html>
